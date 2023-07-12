@@ -1,0 +1,29 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Set up Docker
+      uses: docker/setup-docker@v1
+    
+    - name: Build Docker image
+      run: docker build -t fuyudi/test:latest .
+    
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: fuyudi
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    
+    - name: Push Docker image
+      run: docker push fuyudi/test:latest
