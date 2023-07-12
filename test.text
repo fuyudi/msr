@@ -1,1 +1,6 @@
 this file just to test github actions
+
+----history----
+12-07-2023 12:12 = Error: Unable to resolve action docker/setup-docker, repository not found
+12-07-2023 12:16 = unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /home/runner/work/msr/msr/Dockerfile: no such file or directory
+12-07-2023 12:27 = unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /home/runner/work/msr/msr/Dockerfile: no such file or directory
